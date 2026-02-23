@@ -4,148 +4,447 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akwe Amosu — Developmental Coaching</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --yellow: #F5C842;
+      --yellow-dark: #E8B800;
+      --yellow-light: #FBE07A;
+      --black: #1a1a1a;
+      --off-white: #fdfaf0;
+      --text: #2a2a2a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--yellow);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--yellow);
+      border-bottom: 2px solid var(--black);
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--black);
+    }
+    .wordmark span { font-style: italic; font-weight: 400; }
+
+    nav ul { list-style: none; display: flex; gap: 2.2rem; }
+    nav ul a {
+      text-decoration: none;
+      color: var(--black);
+      font-size: 0.82rem;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    nav ul a:hover { border-bottom-color: var(--black); }
+
     /* ── HERO ── */
     .hero {
-      position: relative;
-      height: 92vh;
-      min-height: 520px;
-      max-height: 860px;
-      overflow: hidden;
-      border-bottom: 2px solid var(--black);
-    }
-
-    .hero-img {
-      position: absolute;
-      inset: 0;
       width: 100%;
-      height: 100%;
+      border-bottom: 2px solid var(--black);
+      line-height: 0;
+    }
+    .hero img {
+      width: 100%;
+      display: block;
+      max-height: 75vh;
       object-fit: cover;
-      object-position: center 30%;
-      filter: grayscale(15%) contrast(1.05);
+      object-position: center center;
     }
 
-    /* Yellow tint overlay, stronger at bottom */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(245,200,66,0.18) 0%,
-        rgba(245,200,66,0.55) 60%,
-        rgba(245,200,66,0.92) 100%
-      );
-    }
+    /* ── SHARED ── */
+    section { padding: 5rem 2.5rem; }
 
-    .hero-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 3rem 2.5rem 3.5rem;
+    .container {
       max-width: 1160px;
       margin: 0 auto;
     }
 
-    .hero-content h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(3.2rem, 7vw, 6.5rem);
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
       font-weight: 400;
-      line-height: 1.0;
-      color: var(--black);
+      margin-bottom: 1rem;
+      opacity: 0.55;
     }
 
-    .hero-content h1 em {
-      display: block;
-      font-style: italic;
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
     }
 
-    .hero-content .hero-sub {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      max-width: 46ch;
-      color: var(--black);
-      opacity: 0.85;
-    }
-
-    .hero-content .hero-actions {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    p + p { margin-top: 1em; }
+    a { color: inherit; }
 
     /* ── WHY COACHING ── */
     #why {
       background: var(--off-white);
       border-bottom: 2px solid var(--black);
     }
-
     #why .container {
-      max-width: 1160px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1.8fr;
       gap: 5rem;
       align-items: start;
     }
+    .why-heading { position: sticky; top: 5rem; }
 
-    #why .why-heading { position: sticky; top: 6rem; }
+    /* ── ABOUT ── */
+    #about {
+      border-bottom: 2px solid var(--black);
+    }
+    #about .container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
 
-    /* ── GET STARTED STRIP ── */
-    .strip {
-      background: var(--yellow);
-      border-top: 2px solid var(--black);
-      padding: 3.5rem 2.5rem;
+    .about-photo-wrap {
+      position: sticky;
+      top: 5rem;
+    }
+    .about-photo-wrap::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid var(--black);
+      z-index: 0;
+    }
+    .about-photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 560px;
+    }
+
+    /* ── FEES ── */
+    #fees {
+      background: var(--black);
+      color: var(--yellow);
+      border-bottom: 2px solid var(--yellow-dark);
+    }
+    #fees .container { max-width: 1160px; margin: 0 auto; }
+    #fees h2 { color: var(--yellow-light); }
+    #fees .section-label { color: var(--yellow); }
+    #fees > .container > p { opacity: 0.75; max-width: 50ch; margin-bottom: 2.5rem; }
+
+    .fees-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid #333;
+    }
+    .fee-tier {
+      padding: 1.8rem 1.5rem;
+      border-right: 1px solid #333;
+    }
+    .fee-tier:last-child { border-right: none; }
+    .fee-tier .income {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--yellow-light);
+      opacity: 0.65;
+      margin-bottom: 0.6rem;
+    }
+    .fee-tier .amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.6rem;
+      line-height: 1.05;
+    }
+    .fee-tier .per { font-size: 0.78rem; opacity: 0.5; margin-top: 0.25rem; }
+    .fee-tier .program { margin-top: 1rem; font-size: 0.85rem; opacity: 0.8; }
+    .fees-note { margin-top: 1.5rem; font-size: 0.88rem; opacity: 0.6; font-style: italic; }
+
+    /* ── ACCREDITATION ── */
+    #accreditation {
+      background: var(--off-white);
+      border-bottom: 2px solid var(--black);
+    }
+    #accreditation .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    #accreditation .acc-text { max-width: 44ch; }
+
+    .badges { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .badge img { height: 90px; width: auto; display: block; }
+    .badge-placeholder {
+      height: 90px;
+      width: 78px;
+      border: 2px dashed rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 0;
+    }
+    #testimonials .container { max-width: 1160px; margin: 0 auto; }
+
+    .featured-quote {
+      background: var(--black);
+      color: var(--yellow);
+      padding: 4rem 2.5rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .featured-quote blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-style: italic;
+      line-height: 1.25;
+      max-width: 18ch;
+      margin: 0 auto;
+    }
+    .featured-quote cite {
+      display: block;
+      margin-top: 1.2rem;
+      font-style: normal;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.55;
+    }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--black);
+      border-left: 2px solid var(--black);
+      border-right: 2px solid var(--black);
+      border-bottom: 2px solid var(--black);
+    }
+    .t-card {
+      background: var(--yellow);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       gap: 1.5rem;
-      max-width: 100%;
+    }
+    .t-card:nth-child(even) { background: var(--yellow-light); }
+    .t-card blockquote { font-style: italic; font-size: 1rem; line-height: 1.8; flex: 1; }
+    .t-card cite {
+      font-style: normal;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.55;
     }
 
-    .strip h3 {
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--off-white);
+      border-top: 2px solid var(--black);
+    }
+    #contact .container {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info { position: sticky; top: 5rem; }
+    .contact-info h2 { margin-bottom: 1rem; }
+    .contact-info .direct-email {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--black);
+      text-decoration: none;
+      padding-bottom: 1px;
+    }
+
+    .form-wrap {
+      padding: 2.5rem;
+      background: white;
+      border: 2px solid var(--black);
+    }
+    .form-wrap h3 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: 1.3rem;
       font-weight: 400;
-      max-width: 42ch;
+      margin-bottom: 1.5rem;
     }
 
+    form { display: flex; flex-direction: column; gap: 1.2rem; }
+    form label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 400;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid #ccc;
+      background: white;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    form input:focus,
+    form textarea:focus {
+      border-color: var(--black);
+      background: var(--yellow-light);
+    }
+    form textarea { min-height: 140px; resize: vertical; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      background: var(--black);
+      color: var(--yellow);
+      text-decoration: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 2px solid var(--black);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover { background: transparent; color: var(--black); }
+
+    .form-success {
+      display: none;
+      padding: 1.5rem;
+      background: var(--yellow-light);
+      border: 2px solid var(--black);
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: var(--yellow);
+      padding: 2.5rem;
+      border-top: 2px solid var(--yellow-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    footer .footer-links {
+      font-size: 0.82rem;
+      opacity: 0.6;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a { text-decoration: none; color: inherit; }
+    footer .footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .fees-grid { grid-template-columns: 1fr 1fr; }
+      .fee-tier { border-bottom: 1px solid #333; }
+    }
     @media (max-width: 720px) {
-      .hero-content { padding: 2rem 1.5rem 2.5rem; }
-      #why .container { grid-template-columns: 1fr; gap: 2rem; }
-      #why .why-heading { position: static; }
-      .strip { flex-direction: column; text-align: center; padding: 3rem 1.5rem; }
+      nav { padding: 0.9rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; }
+      nav ul { gap: 1.2rem; }
+      nav ul a { font-size: 0.75rem; }
+      section { padding: 3.5rem 1.5rem; }
+      #why .container,
+      #about .container,
+      #contact .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .why-heading, .contact-info { position: static; }
+      .about-photo-wrap { position: static; order: -1; }
+      .about-photo-wrap::after { display: none; }
+      .t-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .fees-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      footer .footer-links { justify-content: center; }
+      #accreditation .container { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="wordmark" href="index.html">Akwe Amosu <span>Coaching</span></a>
+  <a class="wordmark" href="#top">Akwe Amosu <span>Coaching</span></a>
   <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About Akwe</a></li>
-    <li><a href="clients.html">Client Feedback</a></li>
-    <li><a href="contact.html">Get in Touch</a></li>
+    <li><a href="#why">Why Coaching</a></li>
+    <li><a href="#about">About Akwe</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact">Get in Touch</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <img class="hero-img" src="trees.jpeg" alt="Bleak trees linocut print by Akwe Amosu">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>For the tree,<em>for the forest.</em></h1>
-    <p class="hero-sub">Developmental coaching rooted in self-awareness, curiosity, and the courage to grow.</p>
-    <div class="hero-actions">
-      <a href="contact.html" class="btn">Book a free conversation</a>
-      <a href="about.html" style="font-size:0.88rem; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border-bottom: 1px solid var(--black); padding-bottom:1px;">About Akwe</a>
-    </div>
-  </div>
+<div class="hero" id="top">
+  <img src="hero.jpg" alt="For the tree, for the forest — Developmental coaching rooted in self-awareness, curiosity, and the courage to grow.">
 </div>
 
 <!-- WHY COACHING -->
@@ -155,34 +454,180 @@
       <p class="section-label">Why Coaching?</p>
       <h2>Growth that serves you — and those around you.</h2>
     </div>
-    <div class="why-body">
+    <div>
       <p>I come to coaching with a belief that self-awareness, curiosity and the courage to grow are vital assets, even when they bring discomfort. That's true in personal or community spaces, and it is also key in the workplace. Living and working well alongside others requires constant learning and adaptation. This is particularly the case for leaders who need to build trust with their teams. Coaching can help deepen and expand these capacities.</p>
       <p>Sometimes my clients have a specific issue — perhaps a work relationship that keeps going off the rails, or anxiety about taking a new role. Perhaps there's a painful disappointment to process, or grief that feels stuck. Alternatively, they're ready to make a positive shift in their life but something keeps getting in the way. Or they just feel stale — a life that used to be satisfying no longer feels good. Whatever the reason, working through it with a thoughtful coach can be helpful.</p>
       <p>When you choose coaching, you are attending to your own needs — but you will be doing something else that is important. Whether at home, in our neighborhood or workplace, in our activism or our volunteering, we are always in community. When we feel positive and aligned with our own sense of meaning and purpose, we help those around us to thrive. We are each one tree, but together we make a forest. The value of coaching extends beyond our personal growth.</p>
       <p>We are in turbulent times that may trigger anxiety about the future amid rising unpredictability. Even those energized by disruption and the opportunities it can bring may feel uneasy at the constant churn. At such a moment, it can be difficult to stay connected to a sense of purpose, to stay open and curious as we try to do good work, and care for ourselves and others. But with reliable support, and confidence to pursue what we deeply care about, we can regain balance, take pleasure in the world despite the headwinds, and keep learning.</p>
-      <p style="margin-top:2rem;"><a href="contact.html" class="btn">Start a conversation</a></p>
+      <p>I aim to provide that warm and engaged support to my clients — in service to them and, by extension, their community. For each tree, and for the forest.</p>
     </div>
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div style="max-width:1160px; margin:0 auto; width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
-    <h3>"Everyone needs an Akwe Amosu in their life."<br><span style="font-family:'Source Serif 4',serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.55; font-style:normal;">— CEO, Netherlands</span></h3>
-    <a href="clients.html" class="btn">Read more feedback</a>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div>
+      <p class="section-label">About Akwe</p>
+      <h2>A career built on listening, leading, and learning.</h2>
+      <p>I worked for over two decades as a journalist and editor (West Africa magazine, the Financial Times, the BBC World Service and allAfrica.com). After a short spell with the United Nations, I switched to being a full-time advocate for human rights and social justice with the Open Society Foundations and later joined senior management there. In all my roles, I've seen how hard it is to achieve good results when both confidence and trust are low. I've also seen that when one individual makes a positive change, it can trigger growth and new energy in the whole team.</p>
+      <p>Most recently I led a five-year project bringing nearly 200 human rights leaders together from 70 countries for immersive conversations about how we might strengthen organizations and movements that defend rights and increase their power and impact. The participants taught me a great deal about leading with generosity and wisdom, and what it takes to translate good intentions into positive outcomes.</p>
+      <p>And in the background, I have always been a writer, mostly of poetry. My book, <em>Not Goodbye</em>, was published in 2010 and my poems have appeared in US and South African journals — <em>The Common</em>, <em>Illuminations</em>, <em>Carapace</em>, <em>New Contrast</em>, and others.</p>
+      <p>I am certified as a Professional Coach with <a href="https://www.integralcoachingcanada.com" target="_blank" style="border-bottom:1px solid currentColor; text-decoration:none;">Integral Coaching Canada</a>. The rigor of the Integral methodology offers a strong framework for a client's growth yet puts high value on intuition, curiosity and enquiry, allowing both coach and client to feel partnership, trust and agency as they work together. A coaching program is usually six to eight sessions, tailored to the individual, and can be extended if desired.</p>
+    </div>
+
+    <div class="about-photo-wrap">
+      <img src="akwe.jpg" alt="Akwe Amosu">
+    </div>
   </div>
-</div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+  <div class="container">
+    <p class="section-label">2026 Fees</p>
+    <h2>Sliding scale based on income.</h2>
+    <p>All coaching sessions take place online. My 2026 fees for individual clients in the US range according to ability to pay.</p>
+    <div class="fees-grid">
+      <div class="fee-tier">
+        <p class="income">Income over $200k</p>
+        <p class="amount">$300</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,800 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income over $150k</p>
+        <p class="amount">$250</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,500 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income over $100k</p>
+        <p class="amount">$200</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,200 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income under $100k</p>
+        <p class="amount">$150</p>
+        <p class="per">per hour</p>
+        <p class="program">$900 — six-session program</p>
+      </div>
+    </div>
+    <p class="fees-note">For organizations, or clients based outside the US, we can discuss an appropriate fee.</p>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<section id="accreditation">
+  <div class="container">
+    <div class="acc-text">
+      <p class="section-label">Accreditation</p>
+      <h2>Certified with Integral Coaching Canada.</h2>
+    </div>
+    <div class="badges">
+      <div class="badge"><img src="logo-ipc.png" alt="Integral Professional Coach — Integral Coaching Canada"></div>
+      <div class="badge"><img src="logo-iac.png" alt="Integral Associate Coach — Integral Coaching Canada"></div>
+      <div class="badge-placeholder">Third badge coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-label">Client Feedback</p>
+    <h2>In their own words.</h2>
+    <div class="featured-quote">
+      <blockquote>"Everyone needs an Akwe Amosu in their life."</blockquote>
+      <cite>CEO, Netherlands</cite>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <blockquote>"Sessions with Akwe were like spending quality time with a critical but impartial friend, who listened deeply and asked difficult questions. It forced me to think about stuff I had not examined, either because my mind was too cluttered, or I was afraid of what I would find. The method of practices, which allows you in between sessions to concentrate on different kinds of issues — both conceptual and practical — was particularly helpful. It allowed me to test new skills and ways of doing things, and either drop them if they did not work or incorporate them into my everyday life if they did."</blockquote>
+        <cite>Research Professor, UK</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>"Working with Akwe never felt generic. I really appreciated how she took the time to craft focus practice questions that were clearly tailored to me, and how she would adjust or rethink them if she sensed they might not work well due to my special circumstances. That intentionality made it clear that each session was genuinely bespoke, shaped around the person being coached rather than a one-size-fits-all approach. Her style blends reflection with practicality in a way that feels both grounding and gently challenging. The space she creates is calm, thoughtful, and deeply supportive, enabling real clarity and honest exploration."</blockquote>
+        <cite>Human Rights Lawyer, Nigeria</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>"Having experienced the coaching with Akwe, I can wholeheartedly say that it was a life saver. I was thrust into a Managing Director's position due to unforeseen circumstances but thanks to the coaching I received, I was able to survive. I felt prepared, confident and knew what type of leader I wanted to be. It has been over a year since I completed the coaching and it has easily been one of the best decisions of my life."</blockquote>
+        <cite>Managing Director, South Africa</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>"What I appreciated most about coaching with Akwe was that the work wasn't about fixing me but about widening how I relate to my work and myself. I felt genuinely seen and valued in the process, and over time the practices helped me regain energy and lightness in my work."</blockquote>
+        <cite>Executive Director, Romania</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-info">
+      <p class="section-label">Get in Touch</p>
+      <h2>Let's have a conversation.</h2>
+      <p>If you think coaching might be of interest, I'd be glad to have a 40-minute conversation at no charge, where I can hear what's on your mind and we can see whether we might be a good fit. If we agree that a program would be worthwhile, we would discuss what form it might take.</p>
+      <p>All coaching sessions take place online.</p>
+      <a class="direct-email" href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
+    </div>
+    <div class="form-wrap">
+      <h3>Send me a message</h3>
+      <form id="contactForm" action="https://formspree.io/f/mwvnwkyq" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Full name">
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+        </div>
+        <div>
+          <label for="message">What's on your mind?</label>
+          <textarea id="message" name="message" required placeholder="Tell me a little about what's bringing you to coaching…"></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        Thank you for reaching out — I'll be in touch soon.
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-name">Akwe Amosu (she/her)</div>
   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="clients.html">Clients</a>
-    <a href="contact.html">Get in Touch</a>
+    <a href="#why">Why Coaching</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact">Get in Touch</a>
     <a href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
   </div>
 </footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('There was a problem sending your message. Please email akweamosu_coaching@proton.me directly.');
+    }
+  });
+</script>
 
 </body>
 </html>
