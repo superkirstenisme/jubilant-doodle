@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Akwe — Akwe Amosu Coaching</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 2px solid var(--black);
+    }
+    .page-header .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+    }
+    .page-header h1 em { display: block; }
+
+    /* ── ABOUT BODY ── */
+    #about-main {
+      background: var(--off-white);
+      border-bottom: 2px solid var(--black);
+    }
+    #about-main .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p + p { margin-top: 1em; }
+
+    /* Photo */
+    .about-photo-wrap {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .about-photo-wrap::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid var(--black);
+      z-index: 0;
+    }
+
+    .about-photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 560px;
+    }
+
+    /* ── FEES ── */
+    #fees {
+      background: var(--black);
+      color: var(--yellow);
+      border-bottom: 2px solid var(--yellow-dark);
+    }
+    #fees .container { max-width: 1160px; margin: 0 auto; }
+    #fees h2 { color: var(--yellow-light); margin-bottom: 0.5rem; }
+    #fees > .container > p { opacity: 0.75; max-width: 50ch; margin-bottom: 2.5rem; }
+
+    .fees-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid #333;
+    }
+
+    .fee-tier {
+      padding: 1.8rem 1.5rem;
+      border-right: 1px solid #333;
+    }
+    .fee-tier:last-child { border-right: none; }
+
+    .fee-tier .income {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--yellow-light);
+      opacity: 0.65;
+      margin-bottom: 0.6rem;
+    }
+    .fee-tier .amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.6rem;
+      line-height: 1.05;
+      color: var(--yellow);
+    }
+    .fee-tier .per { font-size: 0.78rem; opacity: 0.5; margin-top: 0.25rem; }
+    .fee-tier .program { margin-top: 1rem; font-size: 0.85rem; color: var(--yellow-light); opacity: 0.8; }
+
+    .fees-note {
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+      opacity: 0.6;
+      font-style: italic;
+    }
+
+    /* ── ACCREDITATION ── */
+    #accreditation {
+      border-bottom: 2px solid var(--black);
+    }
+    #accreditation .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    #accreditation .acc-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    #accreditation .acc-text { max-width: 46ch; }
+    #accreditation .acc-text p { font-size: 0.95rem; }
+
+    @media (max-width: 900px) {
+      #fees .fees-grid { grid-template-columns: 1fr 1fr; }
+      .fee-tier { border-bottom: 1px solid #333; }
+    }
+    @media (max-width: 720px) {
+      #about-main .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo-wrap { position: static; }
+      .about-photo-wrap::after { display: none; }
+      .page-header { padding: 3rem 1.5rem 2rem; }
+      #fees .fees-grid { grid-template-columns: 1fr 1fr; }
+      #accreditation .acc-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="index.html">Akwe Amosu <span>Coaching</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About Akwe</a></li>
+    <li><a href="clients.html">Client Feedback</a></li>
+    <li><a href="contact.html">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">About Akwe</p>
+    <h1>A career built on<em>listening, leading,</em><em style="opacity:0.5;">and learning.</em></h1>
+  </div>
+</div>
+
+<!-- ABOUT MAIN -->
+<section id="about-main">
+  <div class="container">
+    <div class="about-text">
+      <p>I worked for over two decades as a journalist and editor (West Africa magazine, the Financial Times, the BBC World Service and allAfrica.com). After a short spell with the United Nations, I switched to being a full-time advocate for human rights and social justice with the Open Society Foundations and later joined senior management there. In all my roles, I've seen how hard it is to achieve good results when both confidence and trust are low. I've also seen that when one individual makes a positive change, it can trigger growth and new energy in the whole team.</p>
+      <p>Most recently I led a five-year project bringing nearly 200 human rights leaders together from 70 countries for immersive conversations about how we might strengthen organizations and movements that defend rights and increase their power and impact. The participants taught me a great deal about leading with generosity and wisdom, and what it takes to translate good intentions into positive outcomes.</p>
+      <p>And in the background, I have always been a writer, mostly of poetry. My book, <em>Not Goodbye</em>, was published in 2010 and my poems have appeared in US and South African journals — <em>The Common</em>, <em>Illuminations</em>, <em>Carapace</em>, <em>New Contrast</em>, and others.</p>
+      <p>I am certified as a Professional Coach with <a href="https://www.integralcoachingcanada.com" target="_blank" style="border-bottom:1px solid currentColor;">Integral Coaching Canada</a>. The rigor of the Integral methodology offers a strong framework for a client's growth yet puts high value on intuition, curiosity and enquiry, allowing both coach and client to feel partnership, trust and agency as they work together. A coaching program is usually six to eight sessions, tailored to the individual, and can be extended if desired.</p>
+      <p style="margin-top:2rem;"><a href="contact.html" class="btn">Book a free conversation</a></p>
+    </div>
+
+    <div class="about-photo-wrap">
+      <img src="akwe.jpg" alt="Akwe Amosu">
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+  <div class="container">
+    <p class="section-label">2026 Fees</p>
+    <h2>Sliding scale based on income.</h2>
+    <p>All sessions take place online. Individual clients in the US are charged according to ability to pay.</p>
+
+    <div class="fees-grid">
+      <div class="fee-tier">
+        <p class="income">Income over $200k</p>
+        <p class="amount">$300</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,800 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income over $150k</p>
+        <p class="amount">$250</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,500 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income over $100k</p>
+        <p class="amount">$200</p>
+        <p class="per">per hour</p>
+        <p class="program">$1,200 — six-session program</p>
+      </div>
+      <div class="fee-tier">
+        <p class="income">Income under $100k</p>
+        <p class="amount">$150</p>
+        <p class="per">per hour</p>
+        <p class="program">$900 — six-session program</p>
+      </div>
+    </div>
+    <p class="fees-note">For organizations, or clients based outside the US, fees are discussed individually.</p>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<section id="accreditation">
+  <div class="container">
+    <div class="acc-inner">
+      <div class="acc-text">
+        <p class="section-label">Accreditation</p>
+        <h2>Certified with Integral Coaching Canada.</h2>
+        <p>The Integral methodology combines rigorous framework with high value on intuition, curiosity and enquiry — creating genuine partnership, trust, and agency for every client.</p>
+      </div>
+      <div class="badges">
+        <div class="badge"><img src="logo-ipc.png" alt="Integral Professional Coach — Integral Coaching Canada"></div>
+        <div class="badge"><img src="logo-iac.png" alt="Integral Associate Coach — Integral Coaching Canada"></div>
+        <div class="badge-placeholder">Third badge coming soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Akwe Amosu (she/her)</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="clients.html">Clients</a>
+    <a href="contact.html">Get in Touch</a>
+    <a href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
+  </div>
+</footer>
+
+</body>
+</html>

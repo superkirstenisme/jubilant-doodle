@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Feedback — Akwe Amosu Coaching</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 2px solid var(--black);
+    }
+    .page-header .container { max-width: 1160px; margin: 0 auto; }
+    .page-header h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; }
+    .page-header h1 em { display: block; }
+
+    /* ── FEATURED QUOTE ── */
+    .featured-quote {
+      background: var(--black);
+      color: var(--yellow);
+      padding: 5rem 2.5rem;
+      border-bottom: 2px solid var(--yellow-dark);
+      text-align: center;
+    }
+    .featured-quote blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-style: italic;
+      line-height: 1.25;
+      max-width: 18ch;
+      margin: 0 auto;
+    }
+    .featured-quote cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-style: normal;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.55;
+    }
+
+    /* ── TESTIMONIALS GRID ── */
+    #testimonials {
+      background: var(--off-white);
+      border-bottom: 2px solid var(--black);
+    }
+    #testimonials .container { max-width: 1160px; margin: 0 auto; }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--black);
+      border: 2px solid var(--black);
+      margin-top: 2.5rem;
+    }
+
+    .t-card {
+      background: var(--off-white);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .t-card:nth-child(even) { background: var(--yellow-light); }
+
+    .t-card blockquote {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .t-card cite {
+      font-style: normal;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.55;
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      padding: 4rem 2.5rem;
+    }
+    .cta-strip .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .cta-strip h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      max-width: 38ch;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 720px) {
+      .t-grid { grid-template-columns: 1fr; }
+      .page-header { padding: 3rem 1.5rem 2rem; }
+      .featured-quote { padding: 3.5rem 1.5rem; }
+      .cta-strip { padding: 3rem 1.5rem; }
+      .cta-strip .container { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="index.html">Akwe Amosu <span>Coaching</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Akwe</a></li>
+    <li><a href="clients.html" class="active">Client Feedback</a></li>
+    <li><a href="contact.html">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">Client Feedback</p>
+    <h1>In their<em>own words.</em></h1>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<div class="featured-quote">
+  <blockquote>"Everyone needs an Akwe Amosu in their life."</blockquote>
+  <cite>CEO, Netherlands</cite>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-label">What clients say</p>
+
+    <div class="t-grid">
+
+      <div class="t-card">
+        <blockquote>"Sessions with Akwe were like spending quality time with a critical but impartial friend, who listened deeply and asked difficult questions. It forced me to think about stuff I had not examined, either because my mind was too cluttered, or I was afraid of what I would find. The method of practices, which allows you in between sessions to concentrate on different kinds of issues — both conceptual and practical — was particularly helpful. It allowed me to test new skills and ways of doing things, and either drop them if they did not work or incorporate them into my everyday life if they did."</blockquote>
+        <cite>Research Professor, UK</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>"Working with Akwe never felt generic. I really appreciated how she took the time to craft focus practice questions that were clearly tailored to me, and how she would adjust or rethink them if she sensed they might not work well due to my special circumstances. That intentionality made it clear that each session was genuinely bespoke, shaped around the person being coached rather than a one-size-fits-all approach. Her style blends reflection with practicality in a way that feels both grounding and gently challenging. The space she creates is calm, thoughtful, and deeply supportive, enabling real clarity and honest exploration."</blockquote>
+        <cite>Human Rights Lawyer, Nigeria</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>"Having experienced the coaching with Akwe, I can wholeheartedly say that it was a life saver. I was thrust into a Managing Director's position due to unforeseen circumstances but thanks to the coaching I received, I was able to survive. I felt prepared, confident and knew what type of leader I wanted to be. It has been over a year since I completed the coaching and it has easily been one of the best decisions of my life."</blockquote>
+        <cite>Managing Director, South Africa</cite>
+      </div>
+
+      <div class="t-card">
+        <blockquote>"What I appreciated most about coaching with Akwe was that the work wasn't about fixing me but about widening how I relate to my work and myself. I felt genuinely seen and valued in the process, and over time the practices helped me regain energy and lightness in my work."</blockquote>
+        <cite>Executive Director, Romania</cite>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="container">
+    <h3>Ready to see whether coaching might be right for you?</h3>
+    <a href="contact.html" class="btn">Book a free 40-minute conversation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-name">Akwe Amosu (she/her)</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="clients.html">Clients</a>
+    <a href="contact.html">Get in Touch</a>
+    <a href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
+  </div>
+</footer>
+
+</body>
+</html>

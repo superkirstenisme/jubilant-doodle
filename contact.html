@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get in Touch — Akwe Amosu Coaching</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 2px solid var(--black);
+    }
+    .page-header .container { max-width: 1160px; margin: 0 auto; }
+    .page-header h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; }
+    .page-header h1 em { display: block; }
+
+    /* ── MAIN LAYOUT ── */
+    #contact-main {
+      background: var(--off-white);
+      border-bottom: 2px solid var(--black);
+    }
+    #contact-main .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info { position: sticky; top: 6rem; }
+    .contact-info h2 { margin-bottom: 1rem; }
+    .contact-info p { font-size: 0.98rem; }
+    .contact-info p + p { margin-top: 0.9em; }
+
+    .contact-info .direct-email {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--black);
+      text-decoration: none;
+      padding-bottom: 1px;
+    }
+
+    /* ── FORM ── */
+    .form-wrap {
+      padding: 2.5rem;
+      background: white;
+      border: 2px solid var(--black);
+    }
+
+    .form-wrap h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; }
+
+    /* override shared form styles for inline feel */
+    form input,
+    form textarea {
+      border-color: #ccc;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: var(--black);
+      background: var(--yellow-light);
+    }
+
+    .form-success {
+      padding: 1.5rem;
+      background: var(--yellow-light);
+      border: 2px solid var(--black);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      #contact-main .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-info { position: static; }
+      .form-wrap { padding: 1.5rem; }
+      .page-header { padding: 3rem 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="index.html">Akwe Amosu <span>Coaching</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Akwe</a></li>
+    <li><a href="clients.html">Client Feedback</a></li>
+    <li><a href="contact.html" class="active">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h1>Let's have<em>a conversation.</em></h1>
+  </div>
+</div>
+
+<!-- CONTACT MAIN -->
+<section id="contact-main">
+  <div class="container">
+
+    <div class="contact-info">
+      <p class="section-label">Free 40-minute call</p>
+      <h2>No charge. No obligation.</h2>
+      <p>If you think coaching might be of interest, I'd be glad to have a 40-minute conversation at no charge — I can hear what's on your mind, and we can see whether we might be a good fit.</p>
+      <p>If we agree that a program would be worthwhile, we would discuss what form it might take.</p>
+      <p>All coaching sessions take place online.</p>
+      <a class="direct-email" href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
+    </div>
+
+    <div class="form-wrap">
+      <h3>Send me a message</h3>
+
+      <form id="contactForm" action="https://formspree.io/f/mwvnwkyq" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label for="message">What's on your mind?</label>
+          <textarea id="message" name="message" required placeholder="Tell me a little about what's bringing you to coaching…" style="min-height:160px;"></textarea>
+        </div>
+
+        <div style="margin-top:1.2rem;">
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="formSuccess" style="display:none;">
+        Thank you for reaching out — I'll be in touch soon.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Akwe Amosu (she/her)</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="clients.html">Clients</a>
+    <a href="contact.html">Get in Touch</a>
+    <a href="mailto:akweamosu_coaching@proton.me">akweamosu_coaching@proton.me</a>
+  </div>
+</footer>
+
+<script>
+  // Show success message after Formspree redirect (optional JS enhancement)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('There was a problem submitting your message. Please email akweamosu_coaching@proton.me directly.');
+    }
+  });
+</script>
+
+</body>
+</html>
